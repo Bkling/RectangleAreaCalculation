@@ -12,7 +12,7 @@
         <title>Rectangle Result</title>
     </head>
     <body>
-        <h1>The area of the rectangle</h1>
+        <h1>Area Calculation</h1>
         <%
             String result = "";
             Object res = request.getAttribute("Area");

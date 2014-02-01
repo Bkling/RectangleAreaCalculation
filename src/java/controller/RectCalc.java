@@ -13,14 +13,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.TriAreaCalculation;
+import model.RectAreaCalculation;
 
 /**
  *
  * @author benja_000
  */
-@WebServlet(name = "TriCalc", urlPatterns = {"/TriCalc"})
-public class TriCalc extends HttpServlet {
+@WebServlet(name = "RectCalc", urlPatterns = {"/RectCalc"})
+public class RectCalc extends HttpServlet {
 
     private static final String RESULT_PAGE = "AreaResult.jsp";
 
@@ -37,14 +37,14 @@ public class TriCalc extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String s1 = request.getParameter("side1");
-        String s2 = request.getParameter("side2");
-        double side1 = Double.valueOf(s1);
-        double side2 = Double.valueOf(s2);
+        String length = request.getParameter("length");
+        String width = request.getParameter("width");
+        int wid = Integer.valueOf(width);
+        int len = Integer.valueOf(length);
 
-        TriAreaCalculation tac = new TriAreaCalculation();
+        RectAreaCalculation ra = new RectAreaCalculation(len, wid);
 
-        double answer = tac.findThirdSideOfTriangle(side1, side2);
+        Integer answer = ra.rectangleCalculation(len, wid);
 
         request.setAttribute("Area", answer);
 

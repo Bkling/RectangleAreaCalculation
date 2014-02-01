@@ -14,7 +14,7 @@
     <body>
         <h1>Area Calculation</h1>
         <h2>Please type a number in each text box, and then click the calculate button.</h2>
-        <form name="rectangleCal" method="POST" action="rectCalc">
+        <form name="rectangleCal" method="POST" action="RectCalc">
             <p>
                 <label>Length:</label><input type="text" name="length" id="length"/><br><br>
                 <label>Width:</label><input type="text" name="width" id="width"/><br><br>
