@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.CircAreaCalculation;
 
 /**
  *
@@ -20,7 +21,9 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "CircCalc", urlPatterns = {"/CircCalc"})
 public class CircCalc extends HttpServlet {
+
     private static final String RESULT_PAGE = "AreaResult.jsp";
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,18 +36,20 @@ public class CircCalc extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CircCalc</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CircCalc at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+
+        String radius = request.getParameter("radius");
+
+        double rad = Double.valueOf(radius);
+
+        CircAreaCalculation cArea = new CircAreaCalculation();
+        
+        double answer = cArea.findAreaOfCircle(rad);
+
+        request.setAttribute("Area", answer);
+
+        RequestDispatcher view
+                = request.getRequestDispatcher(RESULT_PAGE);
+        view.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

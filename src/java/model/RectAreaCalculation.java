@@ -9,12 +9,12 @@ package model;
  *
  * @author benja_000
  */
-public class AreaCalculation {
+public class RectAreaCalculation {
 
     private int length;
     private int width;
 
-    public AreaCalculation(int length, int width) {
+    public RectAreaCalculation(int length, int width) {
         this.length = length;
         this.width = width;
     }
