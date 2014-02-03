@@ -22,8 +22,7 @@ import model.TriAreaCalculation;
 @WebServlet(name = "TriCalc", urlPatterns = {"/TriCalc"})
 public class TriCalc extends HttpServlet {
 
-    private static final String RESULT_PAGE = "AreaResult.jsp";
-
+    private static final String RESULT_PAGE = "/AreaResult.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.

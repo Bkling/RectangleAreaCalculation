@@ -22,7 +22,7 @@ import model.CircAreaCalculation;
 @WebServlet(name = "CircCalc", urlPatterns = {"/CircCalc"})
 public class CircCalc extends HttpServlet {
 
-    private static final String RESULT_PAGE = "AreaResult.jsp";
+    private static final String RESULT_PAGE = "/AreaResult.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,7 +42,7 @@ public class CircCalc extends HttpServlet {
         double rad = Double.valueOf(radius);
 
         CircAreaCalculation cArea = new CircAreaCalculation();
-        
+
         double answer = cArea.findAreaOfCircle(rad);
 
         request.setAttribute("Area", answer);
