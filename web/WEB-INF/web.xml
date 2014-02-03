@@ -10,4 +10,9 @@
         </session-timeout>
     </session-config>
     
+        <context-param>
+        <param-name>Result_Page</param-name>
+        <param-value>Area Calculation Page</param-value>
+    </context-param>
+    
 </web-app>

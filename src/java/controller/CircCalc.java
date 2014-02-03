@@ -46,6 +46,9 @@ public class CircCalc extends HttpServlet {
         double answer = cArea.findAreaOfCircle(rad);
 
         request.setAttribute("Area", answer);
+        String result = getServletContext().getInitParameter("Result_Page");
+
+        request.setAttribute("Result_Page", result);
 
         RequestDispatcher view
                 = request.getRequestDispatcher(RESULT_PAGE);
