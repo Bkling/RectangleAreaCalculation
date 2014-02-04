@@ -14,7 +14,7 @@
     <body>
         <h1>Area Calculation</h1>
         <h2>Please type a number in each text box, and then click the calculate button.</h2>
-        <form name="rectangleCal" method="POST" action="RectCalc">
+        <form id="rectangleCal" name="rectangleCal" method="POST" action="RectCalc">
             <p>
                 <label>Length:</label><input type="text" name="length" id="length"/><br><br>
                 <label>Width:</label><input type="text" name="width" id="width"/><br><br>
@@ -22,14 +22,14 @@
             </p>
         </form>
         <br><br>
-        <form name="CircleCal" method="POST" action="CircCalc">
+        <form id="CircleCal" name="CircleCal" method="POST" action="CircCalc">
             <p>
                 <label>Radius:</label><input type="text" name="radius" id="radius"/><br><br>
                 <input type="submit" value="Calculate" name="calc"/>
             </p>
         </form>
         <br><br>
-        <form name="rectangleCal" method="POST" action="TriCalc">
+        <form id="TriangleCal" name="TriangleCal" method="POST" action="TriCalc">
             <p>
                 <label>Side 1:</label><input type="text" name="side1" id="side1"/><br><br>
                 <label>Side 2:</label><input type="text" name="side2" id="side2"/><br><br>
